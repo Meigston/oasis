@@ -115,9 +115,19 @@ catalog:
       rules:
         - allow: [Template]
 
-    # Python API software template (PoC IDP)
+    # Software templates (PoC IDP)
     - type: file
       target: ../../templates/python-api/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: file
+      target: ../../templates/dotnet-api/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: file
+      target: ../../templates/gcp-cloudsql/template.yaml
       rules:
         - allow: [Template]
 

@@ -1,0 +1,31 @@
+name: Provision Cloud SQL
+
+# Provisionamento é uma ação deliberada: dispare manualmente pela aba Actions.
+on:
+  workflow_dispatch:
+
+jobs:
+  provision:
+    name: Provision Cloud SQL instance & database
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Provision database
+        env:
+          GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+          DB_ROOT_PASSWORD: ${{ secrets.DB_ROOT_PASSWORD }}
+        run: bash scripts/create-db.sh

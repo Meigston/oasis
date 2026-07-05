@@ -21,11 +21,16 @@ tenha automaticamente:
 
 ## Templates disponíveis
 
-| Template     | Stack            | Status         |
-| ------------ | ---------------- | -------------- |
-| `python-api` | FastAPI (Python) | ✅ Implementado |
-| `dotnet-api` | .NET             | 🔜 Planejado   |
-| `nodejs-api` | Node.js          | 🔜 Planejado   |
+| Template       | Stack / recurso            | Status         |
+| -------------- | -------------------------- | -------------- |
+| `python-api`   | FastAPI (Python)           | ✅ Implementado |
+| `dotnet-api`   | .NET 10 (Minimal API)      | ✅ Implementado |
+| `gcp-cloudsql` | Cloud SQL (Postgres/MySQL) | ✅ Implementado |
+| `nodejs-api`   | Node.js                    | 🔜 Planejado   |
+
+O template **`gcp-cloudsql`** cria um repositório que provisiona uma instância
+Cloud SQL via `gcloud` num GitHub Actions manual (`workflow_dispatch`) — sem
+Terraform, alinhado às restrições da PoC.
 
 Templates ficam em [`templates/`](./templates) e são registrados no catálogo via
 `app-config.yaml` (`catalog.locations`).

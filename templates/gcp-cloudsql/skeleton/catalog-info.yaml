@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{ values.resourceName }}
+  description: ${{ values.description }}
+  annotations:
+    github.com/project-slug: ${{ values.repoUrl | projectSlug }}
+  labels:
+    cloud-provider: gcp
+    engine: '${{ values.databaseVersion }}'
+spec:
+  type: database
+  owner: ${{ values.owner }}
