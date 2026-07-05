@@ -127,6 +127,11 @@ catalog:
         - allow: [Template]
 
     - type: file
+      target: ../../templates/nodejs-api/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: file
       target: ../../templates/gcp-cloudsql/template.yaml
       rules:
         - allow: [Template]

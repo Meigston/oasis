@@ -25,8 +25,8 @@ tenha automaticamente:
 | -------------- | -------------------------- | -------------- |
 | `python-api`   | FastAPI (Python)           | ✅ Implementado |
 | `dotnet-api`   | .NET 10 (Minimal API)      | ✅ Implementado |
+| `nodejs-api`   | Node.js (Express)          | ✅ Implementado |
 | `gcp-cloudsql` | Cloud SQL (Postgres/MySQL) | ✅ Implementado |
-| `nodejs-api`   | Node.js                    | 🔜 Planejado   |
 
 O template **`gcp-cloudsql`** cria um repositório que provisiona uma instância
 Cloud SQL via `gcloud` num GitHub Actions manual (`workflow_dispatch`) — sem
